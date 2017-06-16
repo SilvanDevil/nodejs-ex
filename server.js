@@ -4,6 +4,8 @@ var express = require('express'),
     app     = express(),
     eps     = require('ejs'),
     morgan  = require('morgan');
+    var config = require('/config/config.json');
+      var  utils = require('/common/util');
     
 Object.assign=require('object-assign')
 
@@ -92,6 +94,7 @@ app.get('/pagecount', function (req, res) {
 });
 
 // error handling
+app.use(utils.sign(config));
 app.use(function(err, req, res, next){
   console.error(err.stack);
   res.status(500).send('Something bad happened!');
