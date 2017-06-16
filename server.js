@@ -5,7 +5,7 @@ var express = require('express'),
     eps     = require('ejs'),
     morgan  = require('morgan');
     var config = require('/config/config.json');
-      var  utils = require('/common/util');
+      var  utils = require('/common/utils');
     
 Object.assign=require('object-assign')
 
